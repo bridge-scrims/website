@@ -23,9 +23,7 @@
 </div>
 
 ### Built With
-
-* [![Next][Next.js]][Next-url]
-* [![Bootstrap][Bootstrap.com]][Bootstrap-url]
+[![Next][Next.js]][Next-url] [![Bootstrap][Bootstrap.com]][Bootstrap-url]
 
 <!-- CONTRIBUTING -->
 ## Contributing
