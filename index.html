@@ -3,124 +3,146 @@
 <head>
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Bridge Scrims</title>
-    <style>
-        @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,800;0,900;1,400&display=swap');
+    <meta name="viewport" content="width=device-width, initial-scale=1.0"><!DOCTYPE html>
+    <html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Bridge Scrims</title>
+        <style>
+            @import url('https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,200;0,400;0,500;0,600;0,800;0,900;1,400&display=swap');
+    
+            * {
+                position: absolute;
+                color: white;
+                margin: 0;
+                padding: 0;
+                outline: none;
+                border: none;
+                font-family: 'Poppins', sans-serif
+            }
 
-        * {
-            position: absolute;
-            color: white;
-            margin: 0;
-            padding: 0;
-            outline: none;
-            border: none;
-            font-family: 'Poppins', sans-serif
-        }
+            body {
+                width: 100vw;
+                height: 100vh;
+                overflow: hidden scroll
+            }
 
-        body {
-            background: black
-        }
+            header {
+                position: fixed;
+                width: 100%;
+                height: 80px;
+                background: #00000040;
+                z-index: 1
+            }
 
-        body > * { position: relative }
+            section {
+                width: 100vw;
+                background-size: cover;
+            }
 
-        header {
-            width: 100vw;
-            height: 80px;
-            /* background: linear-gradient(90deg, rgba(178,58,72,1) 0%, rgba(186,146,142,1) 50%, rgba(71,73,115,1) 100%) */
-            background: linear-gradient(90deg, rgb(178, 58, 72), rgb(186, 146, 142))
-            /* background: #0c0c0e */
-        }
+            #logo {
+                height: 50px;
+                aspect-ratio: 1;
+                left: 15px;
+                top: 15px;
+            }
 
-        header > img {
-            height: 60px;
-            width: 60px;
-            left: 13px;
-            top: 10px
-        }
+            #logotext {
+                left: 70px;
+                width: 0;
+                top: 16px;
+                font-size: 27px;
+                line-height: 24px;
+                text-transform: uppercase;
+                text-shadow: #ffffff60 0 3px;
+                color: #ffffff
+            }
 
-        section {
-            width: 100vw;
-            height: 500px;
-            display: grid;
-            place-items: center;
-        }
+            h1 {
+                top: calc(50vh + 20px);
+                transform: translateY(-50%);
+                left: 20%;
+                display: inline;
+                font-size: 90px;
+                line-height: 95px;
+                text-shadow: #ffffff60 0 5px,
+                    #00000033 0 0 20px
+            }
 
-        #opener {
-            font-size: 90px;
-            width: 0;
-            line-height: 110px;
-            left: 20vw;
-            top: 9vw;
-        }
+            header > div {
+                right: 30px;
+                height: 100%;
+                width: auto;
+                display: flex
+            }
 
-        iframe {
-            right: 20vw;
-            width: 22vw;
-            height: 410px;
-            top: 9vw
-        }
+            header > div > button {
+                background: none;
+                position: relative;
+                height: 100%;
+                padding: 0 12px;
+                font-size: 25px;
+                width: auto;
+                cursor: pointer;
+                font-weight: 700;
+                /* text-decoration: underline; */
+                text-shadow: #ffffff60 0 3px;
+                text-transform: lowercase;
+                color: #ffffff
+            }
 
-        #sfy {
-            right: 20vw;
-            width: 22vw;
-            height: 50px;
-            top: calc(9vw + 430px);
-            background: #202225;
-            border-radius: 5px;
-            display: grid;
-            align-items: center;
-            cursor: pointer;
-            transition-duration: 0.25s;
-        }
+            h1 > a {
+                color: rgb(124, 124, 238);
+                text-shadow: #6f71eb60 0 5px,
+                    #00000033 0 0 20px
+            }
 
-        section > div:hover { opacity: 0.8 }
+            iframe {
+                height: calc(100% + 100px);
+                aspect-ratio: 4 / 5;
+                left: calc(100% + 100px);
+                top: -50px;
+                opacity: 0.8;
+            }
 
-        #membercountcontainer {
-            width: 400px;
-            height: 250px;
-            border-radius: 20px;
-            background: #080808
-        }
-
-        #membercount {
-            width: 100%;
-            top: 50px;
-            text-align: center;
-            font-size: 80px;
-        }
-
-        #membercountcontainer > h2 {
-            bottom: 50px;
-            color: #202225;
-            font-size: 30px;
-            width: 100%;
-            text-align: center;
-        }
-    </style>
+            #cycle {
+                height: 100vh;
+                background-image: url('./shaders-night.png');
+                background-size: cover;
+                transition-duration: 2s
+            }
+        </style>
+    </head>
 </head>
 <body>
     <header>
-        <img src="./logo.png" alt="">
-    </header>
-    <section style="height: calc(100vh - 80px); background: #080808">
-        <h1 id="opener">The&nbsp;Largest Bridge Community on&nbsp;Discord.</h1>
-        <iframe src="https://discord.com/widget?id=759894401957888031&theme=dark" width="100%" height="100%" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
-        <div id="sfy" style="cursor: pointer"><a style="position: relative; text-align: center; font-weight: bold; text-decoration: none" href="https://discord.gg/bridgescrims" target="_blank">See for yourself</a></div>
-    </section>
-    <section>
-        <div id="membercountcontainer">
-            <h1 id="membercount">50000</h1>
-            <h2>server members</h2>
+        <img src="./logo2.png" alt="" id="logo">
+        <h2 id="logotext">Bridge Scrims</h2>
+        <div>
+            <button>About</button>
+            <button>Tournaments</button>
+            <button>Montages</button>
         </div>
+        <!-- <svg xmlns="http://www.w3.org/2000/svg" width="30" height="30" fill="white" class="bi bi-sun" viewBox="0 0 16 16" class="icon">
+            <path d="M8 11a3 3 0 1 1 0-6 3 3 0 0 1 0 6zm0 1a4 4 0 1 0 0-8 4 4 0 0 0 0 8zM8 0a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 0zm0 13a.5.5 0 0 1 .5.5v2a.5.5 0 0 1-1 0v-2A.5.5 0 0 1 8 13zm8-5a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2a.5.5 0 0 1 .5.5zM3 8a.5.5 0 0 1-.5.5h-2a.5.5 0 0 1 0-1h2A.5.5 0 0 1 3 8zm10.657-5.657a.5.5 0 0 1 0 .707l-1.414 1.415a.5.5 0 1 1-.707-.708l1.414-1.414a.5.5 0 0 1 .707 0zm-9.193 9.193a.5.5 0 0 1 0 .707L3.05 13.657a.5.5 0 0 1-.707-.707l1.414-1.414a.5.5 0 0 1 .707 0zm9.193 2.121a.5.5 0 0 1-.707 0l-1.414-1.414a.5.5 0 0 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .707zM4.464 4.465a.5.5 0 0 1-.707 0L2.343 3.05a.5.5 0 1 1 .707-.707l1.414 1.414a.5.5 0 0 1 0 .708z"/>
+        </svg> -->
+    </header>
+    <section id="cycle">
+        <h1>
+            The largest<br>Bridge<br>community<br>on <a target="_blank" href="https://discord.gg/bridgescrims" style="position: relative; text-decoration: none">Discord</a>.
+            <iframe src="https://discord.com/widget?id=759894401957888031&theme=dark" width="auto" height="auto" allowtransparency="true" frameborder="0" sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts"></iframe>
+        </h1>
     </section>
     <script>
-        let xhttp = new XMLHttpRequest()
-        xhttp.onloadend = () => {
-            document.querySelector('#membercount').textContent = JSON.parse(xhttp.responseText).approximate_member_count
-        }
-        xhttp.open('GET', 'https://discord.com/api/v9/invites/bridgescrims?with_counts=true&with_expiration=true', true)
-        xhttp.send()
+        let cycle = document.querySelector('#cycle'),
+            current = 0
+        setInterval(() => {
+            cycle.style.backgroundImage = `url('./shaders-${['day', 'night'][current]}.png')`
+            current = 1 - current
+        }, 10000)
+        
     </script>
 </body>
 </html>
