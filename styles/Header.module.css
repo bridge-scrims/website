@@ -1,0 +1,59 @@
+#Header {
+    position: fixed;
+    width: 100%;
+    top: 0;
+    z-index: 1;
+
+    display: flex;
+    align-items: stretch;
+    justify-content: space-between;
+    padding: 15px 40px 15px 15px;
+    background-color: var(--header-color);
+}
+
+#HomeButton {
+    display: flex;
+    gap: 3px;
+    text-decoration: none;
+}
+
+#HomeButton > h2 {
+    font-size: 27px;
+    line-height: 24px;
+    font-weight: bold;
+    text-transform: uppercase;
+    margin: 1.5px 0 0 0;
+}
+
+#HomeButton > h2 > span.top {
+    text-shadow: var(--scrims-red-shadow) 1px 2px;
+    color: var(--scrims-red);
+}
+
+#HomeButton > h2 > span.bottom {
+    text-shadow: var(--scrims-blue-shadow) 1px 2px;
+    color: var(--scrims-blue);
+}
+
+#PageNavigation {
+    flex-grow: 1;
+    margin: 0;
+
+    list-style: none;
+    display: flex;
+    justify-content: flex-end;
+    gap: 24px;
+}
+
+#PageNavigation a {
+    display: flex;
+    align-items: center;
+    height: 100%;
+    
+    text-decoration: none;
+    font-size: 25px;
+    font-weight: 700;
+    text-shadow: var(--scrims-cream-shadow) 0.5px 2px;
+    text-transform: lowercase;
+    color: var(--slight-cream);
+}

@@ -2,14 +2,14 @@
 
 <br />
 <div align="center">
-  <a href="./logo2.png">
-    <img src="logo2.png" alt="Logo" width="80" height="80">
+  <a href="./public/logo.png">
+    <img src="./public/logo.png" alt="Logo" width="80" height="80">
   </a>
 
 <h3 align="center">website-new</h3>
 
   <p align="center">
-    The official website for the <a href="https://discord.gg/bridgescrims">bridge scrims Discord server</a>.
+    The official website for the <a href="https://discord.gg/bridgescrims">Bridge Scrims Discord server</a>.
     <br />
     <a href="https://github.com/bridge-scrims/website-new"><strong>Explore the docs »</strong></a>
     <br />
@@ -48,8 +48,6 @@ Distributed under the MIT License.
 ## Contact
 
 [Discord Server](https://discord.gg/bridgescrims)
-
-Project Link: [https://github.com/bridge-scrims/website-new](https://github.com/bridge-scrims/website-new)
 
 <!-- ACKNOWLEDGMENTS -->
 <!-- ## Acknowledgments -->
