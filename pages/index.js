@@ -16,7 +16,7 @@ export default function Home() {
             </span>
             <iframe
               src="https://discord.com/widget?id=759894401957888031&theme=dark" 
-              width="auto" height="auto" allowtransparency="true" frameborder="0" 
+              width="auto" height="auto" allowtransparency="true"
               sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
             </iframe>
         </h1>

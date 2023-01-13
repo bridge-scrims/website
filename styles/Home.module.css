@@ -15,14 +15,15 @@
 
 #Title {
     position: absolute;
-    transform: translatey(-50%) translateX(-50%);
+    transform: translateY(-50%) translateX(-50%);
     top: calc(50vh + 20px);
     left: 50vw;
     
+    width: 100%;
     display: flex;
     flex-wrap: initial;
     align-items: center;
-    gap: 90px;
+    justify-content: space-evenly;
 
     font-size: 90px;
     line-height: 95px;
