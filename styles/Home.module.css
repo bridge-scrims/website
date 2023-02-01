@@ -26,10 +26,11 @@
     justify-content: space-evenly;
 
     font-size: 90px;
-    line-height: 95px;
+    line-height: 105px;
     font-weight: bold;
     color: var(--text-color);
     text-shadow: var(--text-shadow) 0 4px, var(--text-glow) 0 0 20px;
+    user-select: none;
 }
 
 #Title iframe {

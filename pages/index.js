@@ -1,7 +1,7 @@
 import Head from 'next/head'
 import styles from '../styles/Home.module.css'
 
-const DISCORD_LINK = <a target="_blank" rel="noreferrer" href="https://discord.gg/bridgescrims">Discord</a>;
+const DISCORD_LINK = <a target="_blank" rel="noreferrer" href="https://discord.gg/bridgescrims" title="Discord Server">Discord</a>;
 
 export default function Home() {
   return (

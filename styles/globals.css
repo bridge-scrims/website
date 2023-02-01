@@ -7,7 +7,7 @@
 
   --text-color: #FFFFFF;
   --text-shadow: #8b8b8b;
-  --text-glow: #00000033;
+  --text-glow: #00000034;
 
   --discord-blue: rgb(124, 124, 238);
   --discord-blue-shadow: #6f71eb60;
@@ -22,8 +22,10 @@
   --scrims-blue-shadow: #453357;
 }
 
-@media (prefers-color-scheme: light) {
-
+@media (prefers-color-scheme: dark) {
+  :root {
+    --text-glow: #ffffff34;
+  }
 }
 
 * {
@@ -50,11 +52,11 @@ button {
   border: none;
 }
 
-button:focus {
-  outline:none;
-  box-shadow: none;
-}
-
 i.bi {
   display: grid;
+}
+
+*:focus {
+  outline: 0;
+  box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
 }
