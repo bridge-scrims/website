@@ -2,14 +2,14 @@
     width: 100%;
     height: 100%;
     position: relative;
-    background-image: url('/shaders-day.png');
+    background-image: url('/shaders-night.png');
     background-repeat: no-repeat;
     background-size: cover;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
     #LandingImageSection {
-        background-image: url('/shaders-night.png');
+        background-image: url('/shaders-day.png');
     }
 }
 
@@ -28,12 +28,13 @@
     font-size: 90px;
     line-height: 95px;
     font-weight: bold;
-    text-shadow: var(--text-shadow) 0 4px, var(--text-glow) 0 0 20px;
     color: var(--text-color);
+    text-shadow: var(--text-shadow) 0 4px, var(--text-glow) 0 0 20px;
 }
 
 #Title iframe {
     height: 450px;
+    border-radius: 6px;
     aspect-ratio: 4 / 5;
 }
 
@@ -43,7 +44,25 @@
 }
 
 @media (max-width: 1040px) {
-    #Title span {
+    #Title iframe {
         display: none;
+    }
+}
+
+@media (max-height: 540px), (max-width: 880px) {
+    #Title {
+        font-size: 65px;
+        line-height: 80px;
+    }
+
+    #Title iframe {
+        height: 350px;
+    }
+}
+
+@media (max-width: 540px) {
+    #Title {
+        font-size: 13vw;
+        line-height: 14vw;
     }
 }

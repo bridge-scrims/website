@@ -6,7 +6,7 @@
   --header-color: #00000040;
 
   --text-color: #FFFFFF;
-  --text-shadow: #ffffff60;
+  --text-shadow: #8b8b8b;
   --text-glow: #00000033;
 
   --discord-blue: rgb(124, 124, 238);
@@ -15,15 +15,14 @@
   --scrims-red: #A24F4E;
   --scrims-red-shadow: #8B3939;
 
-  --slight-cream: #faeeeb;
-  --scrims-cream: #e5ccc3;
-  --scrims-cream-shadow: #bfb3b0;
+  --scrims-cream: #FFEBD9;
+  --scrims-cream-shadow: #726c66;
 
   --scrims-blue: #554565;
   --scrims-blue-shadow: #453357;
 }
 
-@media (prefers-color-scheme: dark) {
+@media (prefers-color-scheme: light) {
 
 }
 
@@ -43,4 +42,19 @@ body,
   width: 100%;
   overflow-x: hidden;
   font-family: 'Poppins', sans-serif
+}
+
+button {
+  background: none;
+  outline: none;
+  border: none;
+}
+
+button:focus {
+  outline:none;
+  box-shadow: none;
+}
+
+i.bi {
+  display: grid;
 }
