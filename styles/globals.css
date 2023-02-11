@@ -39,11 +39,11 @@
 
 html,
 body,
-#__next {
+#__next,
+#__app {
   height: 100%;
   width: 100%;
   overflow-x: hidden;
-  font-family: 'Poppins', sans-serif
 }
 
 button {
