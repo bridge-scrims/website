@@ -1,5 +1,5 @@
 import Head from 'next/head'
-import styles from '../styles/Minecraft.module.css'
+import styles from '@/styles/Minecraft.module.css'
 
 export default function Home() {
 
