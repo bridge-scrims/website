@@ -7,6 +7,8 @@
 
 # testing
 /coverage
+dist/
+.env
 
 # next.js
 next-env.d.ts

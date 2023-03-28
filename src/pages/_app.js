@@ -6,7 +6,7 @@ import { useEffect } from "react"
 
 import "bootstrap/dist/css/bootstrap.min.css";
 import "bootstrap-icons/font/bootstrap-icons.css";
-import '../styles/globals.css'
+import '@/styles/globals.css'
 
 const poppins = Poppins({
   weight: ['200', '400', '500', '600', '800', '900'],
