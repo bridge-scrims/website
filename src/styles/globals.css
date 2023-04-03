@@ -53,10 +53,34 @@ button {
 }
 
 i.bi {
-  display: grid;
+  display: flex;
 }
 
 *:focus {
   outline: 0;
   box-shadow: 0 0 0 0.25rem rgb(13 110 253 / 25%);
+}
+
+.landingImageSection {
+  width: 100%;
+  height: 100%;
+  position: relative;
+}
+
+.landingImageSection::before {
+  content: "";
+  position: absolute;
+  width: 100%;
+  height: 100%;
+  filter: blur(1px);
+  background-position: 50% 0;
+  background-image: url('/shaders-night.png');
+  background-repeat: no-repeat;
+  background-size: cover;
+}
+
+@media (prefers-color-scheme: light) {
+  .landingImageSection::before {
+    background-image: url('/shaders-day.png');
+  }
 }

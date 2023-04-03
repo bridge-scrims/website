@@ -1,4 +1,7 @@
 import Head from 'next/head'
+
+import LandingImageSection from '@/components/LandingImageSection';
+import MainLayout from '@/components/MainLayout'
 import styles from '@/styles/Home.module.css'
 
 const DISCORD_LINK = <a target="_blank" rel="noreferrer" href="https://discord.gg/bridgescrims" title="Discord Server">Discord</a>;
@@ -9,7 +12,7 @@ export default function Home() {
       <Head>
         <title>Bridge Scrims</title>
       </Head>
-      <section id={styles.LandingImageSection}>
+      <LandingImageSection>
         <h1 id={styles.Title}>
             <span>
               The largest<br/>Bridge<br/>community<br/>on {DISCORD_LINK}.
@@ -20,7 +23,9 @@ export default function Home() {
               sandbox="allow-popups allow-popups-to-escape-sandbox allow-same-origin allow-scripts">
             </iframe>
         </h1>
-      </section>
+      </LandingImageSection>
     </>
   )
 }
+
+Home.Layout = MainLayout
