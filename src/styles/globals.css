@@ -84,3 +84,18 @@ i.bi {
     background-image: url('/shaders-day.png');
   }
 }
+
+.imageTextWrapper {
+  width: 100%;
+  background-color: rgb(0 0 0 / 33%);;
+  box-shadow: 0px 0px 10px 2px rgb(26 26 26 / 51%);
+  transform: translateY(+25px);
+  padding: 35px 10px;
+}
+
+@media (prefers-color-scheme: light) {
+  .imageTextWrapper {
+    background-color: rgb(26 26 26 / 25%);
+    box-shadow: 0px 0px 10px 1px rgb(26 26 26 / 23%);
+  }
+}
