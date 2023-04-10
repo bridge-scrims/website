@@ -8,20 +8,20 @@
     "dev": "next dev",
     "build": "next build",
     "start": "next start -p 80",
-    "lint": "next lint"
+    "lint": "next lint",
+    "build-db": "npx tsc -b src/lib/db"
   },
   "dependencies": {
     "@next/font": "^13.0.7",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
-    "eslint": "^8.30.0",
-    "eslint-config-next": "^13.0.7",
+    "glob": "^9.2.1",
     "next": "^13.0.7",
     "pg": "^8.10.0",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.31.3",
-    "typeorm": "^0.3.12"
+    "typeorm": "^0.3.13"
   },
   "homepage": "https://github.com/bridge-scrims/website-new",
   "repository": {
@@ -30,6 +30,10 @@
   },
   "devDependencies": {
     "@types/node": "18.15.10",
-    "@types/react": "18.0.29"
+    "@types/pg": "^8.6.6",
+    "@types/react": "18.0.29",
+    "@types/webpack-env": "^1.18.0",
+    "eslint": "^8.30.0",
+    "eslint-config-next": "^13.0.7"
   }
 }

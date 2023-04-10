@@ -20,7 +20,13 @@ jobs:
     - uses: actions/setup-node@v3
       with:
         node-version: 19
-  
+
+    - name: Create EnvFile
+      run: |
+        touch .env
+        echo POSTGRES_CONN_URI="${{ secrets.POSTGRES_CONN_URI }}" >> .env
+        echo NODE_ENV="production" >> .env
+
     - uses: actions/cache@v3
       with:
         path: |
