@@ -24,6 +24,7 @@ jobs:
     - name: Create EnvFile
       run: |
         touch .env
+        echo DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" >> .env
         echo POSTGRES_CONN_URI="${{ secrets.POSTGRES_CONN_URI }}" >> .env
         echo NODE_ENV="production" >> .env
 
