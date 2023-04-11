@@ -52,6 +52,10 @@ button {
   border: none;
 }
 
+*[busy] {
+  cursor: wait !important;
+}
+
 i.bi {
   display: flex;
 }

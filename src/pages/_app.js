@@ -1,4 +1,3 @@
-import { SessionProvider } from 'next-auth/react'
 import { Poppins } from '@next/font/google'
 import { useEffect } from "react"
 import Head from 'next/head'
@@ -21,8 +20,9 @@ export default function App({ Component, pageProps }) {
 
   const wrapPage = Component.Layout ? ((p) => <Component.Layout>{p}</Component.Layout>) : ((p) => p)
   return (
-    <SessionProvider session={pageProps.session}>
+    <>
       <Head>
+        <title>Bridge Scrims</title>
         <meta charSet="UTF-8" />
         <meta name="viewport" content="width=device-width, initial-scale=1" />
         <meta name="color-scheme" content="dark light" />
@@ -36,6 +36,6 @@ export default function App({ Component, pageProps }) {
       <div id="__app" className={poppins.className}>
           {wrapPage(<Component {...pageProps} />)}
       </div>
-    </SessionProvider>
+    </>
   )
 }
