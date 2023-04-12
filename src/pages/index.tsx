@@ -41,7 +41,7 @@ export default function Home({ session }: HomeProps) {
 }
 
 export const getServerSideProps: GetServerSideProps<HomeProps> = async (context) => {
-  const verified = await getVerifiedSession(context.req, context.res)
+  const verified = await getVerifiedSession(context.req, context.res).catch(console.error)
   if (!verified) return { props: {} }
   return { 
     props: { 

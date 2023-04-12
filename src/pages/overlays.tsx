@@ -15,7 +15,7 @@ export default function Montages({ admin }: MontagesProps) {
 }
 
 export const getServerSideProps: GetServerSideProps<MontagesProps> = async (context) => {
-  const verified = await getVerifiedSession(context.req, context.res)
+  const verified = await getVerifiedSession(context.req, context.res).catch(console.error)
   return { 
     props: { 
       admin: !!verified

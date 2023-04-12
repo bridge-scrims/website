@@ -13,7 +13,7 @@ let connectPromise: Promise<ScrimsClient | void> | null = null
 
 export async function getHostMember(memberId: string) {
     const bot = await discordConnection()
-    return bot.main.members.cache.get(memberId)
+    return bot?.main.members.cache.get(memberId)
 }
 
 export default async function discordConnection() {
@@ -30,6 +30,5 @@ export default async function discordConnection() {
             }).catch(console.error)
     }
     const connected = await connectPromise
-    if (!connected) throw new Error('Discord connection failed!')
-    return connected
+    return connected ?? null
 }

@@ -4,7 +4,7 @@ import Image from "next/image"
 import $ from 'jquery'
 
 import { request, HTTPError } from "@/lib/request"
-import { getSession, verifySession } from "@/lib/auth"
+import { getVerifiedSession } from "@/lib/auth"
 
 import LandingImageSection from "@/components/LandingImageSection"
 import styles from "@/styles/Login.module.css"
@@ -61,8 +61,7 @@ export default function Login() {
 }
 
 export const getServerSideProps: GetServerSideProps<{}> = async (context) => {
-  const session = await getSession(context.req, context.res)
-	const verified = await verifySession(session)
+  const verified = await getVerifiedSession(context.req, context.res).catch(console.error)
 	if (verified) 
     return {
       redirect: {

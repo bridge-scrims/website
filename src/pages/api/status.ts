@@ -3,8 +3,8 @@ import { NextApiRequest, NextApiResponse } from "next"
 import dbConnection from "@/lib/db/connection"
 import DBClient from "@/lib/db/Client";
 
-function botData(bot: ScrimsClient | Error) {
-	if (bot instanceof Error) return `${bot}`;
+function botData(bot: ScrimsClient | null) {
+	if (!bot) return `Discord connection failed!`;
 	const shard = bot.ws.shards.first()
 	return {
 		user: bot.user?.tag,
@@ -20,8 +20,8 @@ function botData(bot: ScrimsClient | Error) {
 	}
 }
 
-function dbData(db: DBClient | Error) {
-	if (db instanceof Error) return `${db}`;
+function dbData(db: DBClient | null) {
+	if (!db) return `Database initialization failed!`;
 	return {
 		type: db.source.options.type,
 		database: db.source.driver.database,
@@ -32,8 +32,8 @@ function dbData(db: DBClient | Error) {
 }
 
 export default async function handler(_req: NextApiRequest, res: NextApiResponse) {
-	const bot = await discordConnection().catch(err => err)
-	const db = await dbConnection().catch(err => err)
+	const bot = await discordConnection()
+	const db = await dbConnection()
 	return res.status(200).json({
 		database: dbData(db),
 		bot: botData(bot)

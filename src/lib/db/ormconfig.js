@@ -7,7 +7,7 @@ function requireAll(pattern) {
         .map(path => Object.values(require("./" + path))[0])
 }
 
-export default new DataSource({
+const dataSource = new DataSource({
     type: 'postgres',
     url: process.env.POSTGRES_CONN_URI,
     logging: !!process.env.DEBUG,
@@ -17,3 +17,5 @@ export default new DataSource({
     migrationsRun: true,
     synchronize: false
 })
+
+export default dataSource;

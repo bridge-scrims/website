@@ -1,4 +1,4 @@
-import { Poppins } from '@next/font/google'
+import { Poppins } from 'next/font/google'
 import { useEffect } from "react"
 import Head from 'next/head'
 

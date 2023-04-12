@@ -11,11 +11,13 @@ async function handler(req: NextApiRequest, res: NextApiResponse) {
     }else if (req.method === 'POST') {
         const data = new URLSearchParams(req.body)
         const code = data.get('code')
-        if (!code) return res.status(400).json({ message: "No Linking Code" })
+        if (!code) return res.status(400).json({ message: "No Linking-Code" })
     
         const db = await dbConnection()
+        if (!db) return res.status(503).json({ message: "Unable to verify Linking-Code" })
+
         const request = await db.linkingRequests.findOne({ where: { code } })
-        if (!request) return res.status(400).json({ message: "Invalid Linking Code" })
+        if (!request) return res.status(400).json({ message: "Invalid Linking-Code" })
     
         req.session.userId = request.userId
         const member = await verifySession(req.session, "Support")

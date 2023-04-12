@@ -10,6 +10,5 @@ export default async function dbConnection() {
             .catch(console.error)
     }
     const db = await connectPromise
-    if (!db) throw new Error('Database initialization failed!')
-    return db
+    return db || null
 }
