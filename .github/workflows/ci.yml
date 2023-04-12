@@ -21,15 +21,6 @@ jobs:
       with:
         node-version: 19
 
-    - name: Create EnvFile
-      run: |
-        touch .env
-        echo DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" >> .env
-        echo POSTGRES_CONN_URI="${{ secrets.POSTGRES_CONN_URI }}" >> .env
-        echo SESSION_SECRET="${{ secrets.SESSION_SECRET }}" >> .env
-        echo BASE_URL="${{ vars.BASE_URL }}" >> .env
-        echo NODE_ENV="production" >> .env
-
     - uses: actions/cache@v3
       with:
         path: |
@@ -41,6 +32,15 @@ jobs:
 
     - name: Install Dependencies
       run: npm ci
+
+    - name: Create .env File
+      run: |
+        touch .env
+        echo DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" >> .env
+        echo POSTGRES_CONN_URI="${{ secrets.POSTGRES_CONN_URI }}" >> .env
+        echo SESSION_SECRET="${{ secrets.SESSION_SECRET }}" >> .env
+        echo BASE_URL="${{ vars.BASE_URL }}" >> .env
+        echo NODE_ENV="production" >> .env
 
     - name: Test Build
       run: npm run build
@@ -57,4 +57,4 @@ jobs:
         TARGET: ${{ secrets.REMOTE_TARGET }}
         SCRIPT_AFTER: |
           cd ${{ secrets.REMOTE_TARGET }}
-          sudo docker compose up -d --build
+          sudo docker compose up --build -d
