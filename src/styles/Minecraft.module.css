@@ -1,28 +1,9 @@
-#LandingImageSection {
-    width: 100%;
-    height: 100%;
-    position: relative;
-    background-image: url('/shaders-night.png');
-    background-repeat: no-repeat;
-    background-size: cover;
-}
-
-@media (prefers-color-scheme: light) {
-    #LandingImageSection {
-        background-image: url('/shaders-day.png');
-    }
-}
-
 #TitleSection {
     position: absolute;
     transform: translateY(-50%) translateX(-50%);
-    top: calc(50vh + 20px);
+    top: calc(50vh + 30px);
     left: 50vw;
     
-    background-color: rgba(0, 0, 0, 0.144);
-    width: 100%;
-    height: 65vh;
-
     display: flex;
     flex-direction: column;
     justify-content: center;
@@ -31,48 +12,33 @@
 
 #Title {
     text-align: center;
-    width: 80%;
-    font-size: 80px;
+    font-size: clamp(1rem, min(4.5vw, 4.5vh), 2.2rem);
     font-weight: bold;
-    color: #94e1ff;
-    text-shadow: #5c8cac 0 3px, 0 0 20px;
+    color: var(--scrims-cream);
+    text-shadow: var(--scrims-cream-shadow) 0 3px;
+    padding: 0px 14px;
     user-select: none;
+    margin-bottom: -3px;
+}
+
+#IpButton {
+    margin-top: 5px;
+    margin-bottom: -6px;
+    padding: 0;
 }
 
 #Ip {
-    margin-top: 3px;
-    font-size: 60px;
+    font-size: clamp(1rem, min(6.5vw, 6.5vh), 3.8rem);
     font-weight: bold;
     color: var(--text-color);
-    text-shadow: var(--text-shadow) 0 3px, 0 0 20px;
+    text-shadow: var(--text-shadow) 0 3px;
     user-select: text;
+    margin: 0;
 }
 
 @media (prefers-color-scheme: light) {
     #Title {
-        color: #498aff;
-        text-shadow: #386ac4 0 3px, 0 0 20px;
-    }
-}
-
-@media (max-height: 700px), (max-width: 880px) {
-    #Title {
-        font-size: 65px;
-        line-height: 80px;
-    }
-
-    #Ip {
-        font-size: 50px;
-    }
-}
-
-@media (max-width: 670px) {
-    #Title {
-        font-size: 9vw;
-        line-height: 11vw;
-    }
-
-    #Ip {
-        font-size: 6vw;
+        color: var(--scrims-cream);
+        text-shadow: var(--scrims-cream-shadow) 0 3px;
     }
 }

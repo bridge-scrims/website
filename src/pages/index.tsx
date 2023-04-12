@@ -49,7 +49,7 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (context)
         name: verified.user.tag, 
         avatar: verified.displayAvatarURL() 
       }
-    } 
+    }
   }
 }
 
