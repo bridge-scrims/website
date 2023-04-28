@@ -1,22 +1,22 @@
 #ErrorWrapper {
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
 }
 
 #Error {
-    text-align: center;
-    font-size: clamp(2rem, 8vw, 4rem);
-    font-weight: bold;
-    color: #dc3545;
-    text-shadow: #96222e 0 3.5px, #dc35454a 0 0 20px;
-    margin-bottom: 17px;
+  text-align: center;
+  font-size: clamp(2rem, 8vw, 4rem);
+  font-weight: bold;
+  color: #dc3545;
+  text-shadow: #96222e 0 3px, #dc35454a 0 0 20px;
+  margin-bottom: 17px;
 }
 
 #ErrorDetails {
-    text-align: center;
-    font-size: clamp(1rem, 4vw, 1.8rem);
-    font-weight: bold;
-    color: var(--text-color);
-    text-shadow: var(--text-shadow) 0 2px, var(--text-glow) 0 0 10px;
+  text-align: center;
+  font-size: clamp(1rem, 4vw, 1.8rem);
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow) 0 2px, var(--text-glow) 0 0 10px;
 }

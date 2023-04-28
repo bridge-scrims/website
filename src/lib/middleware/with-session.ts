@@ -1,4 +1,4 @@
-import { NextApiHandler } from "next";
+import { NextApiHandler } from "next"
 import { getSession } from "../auth"
 
 export default function ApiRouteWithSession(handler: NextApiHandler): NextApiHandler {

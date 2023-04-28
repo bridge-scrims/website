@@ -6,7 +6,10 @@ export type ScrimsClient = Client & { main: Guild }
 
 export const bot = new Client({
     intents: GatewayIntentBits.GuildMembers,
-    shardCount: 1
+    shardCount: 1,
+    rest: {
+        timeout: 10_000
+    }
 })
 
 let connectPromise: Promise<ScrimsClient | void> | null = null
@@ -18,16 +21,20 @@ export async function getHostMember(memberId: string) {
 
 export default async function discordConnection() {
     if (!connectPromise) {
-        connectPromise = bot.login(process.env.DISCORD_TOKEN)
+        connectPromise = bot
+            .login(process.env.DISCORD_TOKEN)
             .then(() => console.log(`Connected to Discord as ${bot.user?.tag}`))
             .then(() => bot.guilds.fetch(MAIN_GUILD))
             .then(async (guild) => {
-                Object.defineProperty(bot, 'main', { value: guild })
+                Object.defineProperty(bot, "main", { value: guild })
                 await guild.roles.fetch()
                 await guild.members.fetch()
-                console.log(`Fetched ${guild.members.cache.size} members and ${guild.roles.cache.size} roles from host`)
-                return bot as ScrimsClient;
-            }).catch(console.error)
+                console.log(
+                    `Fetched ${guild.members.cache.size} members and ${guild.roles.cache.size} roles from host`
+                )
+                return bot as ScrimsClient
+            })
+            .catch(console.error)
     }
     const connected = await connectPromise
     return connected ?? null

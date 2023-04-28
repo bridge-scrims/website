@@ -3,23 +3,19 @@ import { getVerifiedSession } from "@/lib/auth"
 import { GetServerSideProps } from "next"
 
 interface MontagesProps {
-	admin: boolean
+  admin: boolean
 }
 
 export default function Montages({ admin }: MontagesProps) {
-  return (
-    <>
-      
-    </>
-  )
+  return <></>
 }
 
 export const getServerSideProps: GetServerSideProps<MontagesProps> = async (context) => {
   const verified = await getVerifiedSession(context.req, context.res).catch(console.error)
-  return { 
-    props: { 
+  return {
+    props: {
       admin: !!verified
-    } 
+    }
   }
 }
 

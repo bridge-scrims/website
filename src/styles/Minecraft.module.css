@@ -1,44 +1,38 @@
 #TitleSection {
-    position: absolute;
-    transform: translateY(-50%) translateX(-50%);
-    top: calc(50vh + 30px);
-    left: 50vw;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+  top: calc(50vh + 30px);
+  left: 50vw;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #Title {
-    text-align: center;
-    font-size: clamp(1rem, min(4.5vw, 4.5vh), 2.2rem);
-    font-weight: bold;
-    color: var(--scrims-cream);
-    text-shadow: var(--scrims-cream-shadow) 0 3px;
-    padding: 0px 14px;
-    user-select: none;
-    margin-bottom: -3px;
+  text-align: center;
+  font-size: clamp(1.3rem, min(5.8vw, 5.8vh), 2.4rem);
+  font-weight: bold;
+  color: #19be3d;
+  text-shadow: #114b1e 0 1px;
+  letter-spacing: 1px;
+  padding: 0px 14px;
+  user-select: none;
+  margin-bottom: -2px;
 }
 
 #IpButton {
-    margin-top: 5px;
-    margin-bottom: -6px;
-    padding: 0;
+  margin-top: 5px;
+  margin-bottom: -6px;
+  padding: 0;
 }
 
 #Ip {
-    font-size: clamp(1rem, min(6.5vw, 6.5vh), 3.8rem);
-    font-weight: bold;
-    color: var(--text-color);
-    text-shadow: var(--text-shadow) 0 3px;
-    user-select: text;
-    margin: 0;
-}
-
-@media (prefers-color-scheme: light) {
-    #Title {
-        color: var(--scrims-cream);
-        text-shadow: var(--scrims-cream-shadow) 0 3px;
-    }
+  font-size: clamp(1.4rem, min(7.5vw, 7.5vh), 3.8rem);
+  font-weight: bold;
+  color: var(--text-color);
+  text-shadow: var(--text-shadow) 0 2px;
+  user-select: text;
+  margin: 0;
 }

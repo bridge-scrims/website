@@ -1,15 +1,16 @@
-import { DataSource } from 'typeorm';
-import { globSync } from 'glob';
+import { DataSource } from "typeorm"
+import { globSync } from "glob"
 
 function requireAll(pattern) {
     return globSync(pattern)
-        .filter(f => f.endsWith('.js'))
-        .map(path => Object.values(require("./" + path))[0])
+        .filter((f) => f.endsWith(".js"))
+        .map((path) => Object.values(require("./" + path))[0])
 }
 
 const dataSource = new DataSource({
-    type: 'postgres',
+    type: "postgres",
     url: process.env.POSTGRES_CONN_URI,
+    connectTimeoutMS: 10 * 1000,
     logging: !!process.env.DEBUG,
     logNotifications: !!process.env.DEBUG,
     entities: requireAll(`entities/**`),
@@ -18,4 +19,4 @@ const dataSource = new DataSource({
     synchronize: false
 })
 
-export default dataSource;
+export default dataSource

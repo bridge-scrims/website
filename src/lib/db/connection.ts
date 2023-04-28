@@ -5,7 +5,8 @@ let connectPromise: Promise<DBClient | void> | null = null
 
 export default async function dbConnection() {
     if (!connectPromise) {
-        connectPromise = client.initialize()
+        connectPromise = client
+            .initialize()
             .then(() => client)
             .catch(console.error)
     }
