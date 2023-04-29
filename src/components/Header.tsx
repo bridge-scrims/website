@@ -6,9 +6,9 @@ import styles from "@/styles/Header.module.css"
 import { useEffect } from "react"
 
 const NAVIGATION = {
-  "MC Server": "/minecraft",
+  "Minecraft": "/minecraft",
   Store: "https://store.bridgescrims.net",
-  "Game Overlays": "/overlays",
+  "Overlays": "/overlays",
   About: "/about"
 }
 

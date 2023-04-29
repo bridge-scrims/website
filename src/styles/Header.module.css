@@ -14,16 +14,21 @@
 
 #Header a {
   background-color: none;
-  transition: background-color ease 0.3s;
+  transition: background-color ease 0.2s;
 }
 
 #Header a:hover,
-#Header button:hover,
+#Header button:hover {
+  outline: 0;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
 #Header a:focus,
 #Header button:focus {
   outline: 0;
   box-shadow: none;
-  background-color: rgba(0, 0, 0, 0.137);
+  /*border-bottom: 3px solid var(--scrims-cream);*/
 }
 
 #Header[compact] {

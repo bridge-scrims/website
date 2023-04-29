@@ -5,7 +5,7 @@ import styles from "@/styles/Minecraft.module.css"
 import MainLayout from "@/components/MainLayout"
 
 function copyToClipboard() {
-  navigator.clipboard.writeText("play.bridgescrims.net")
+  navigator.clipboard.writeText("bridgescrims.net")
 }
 
 export default function Home() {
@@ -24,7 +24,7 @@ export default function Home() {
             onClick={copyToClipboard}
             title="Copy to clipboard"
           >
-            <h1 id={styles.Ip}>{"play.bridgescrims.net"}</h1>
+            BridgeScrims.net
           </button>
         </section>
       </LandingImageSection>

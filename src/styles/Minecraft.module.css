@@ -3,7 +3,6 @@
   transform: translateY(-50%) translateX(-50%);
   top: calc(50vh + 30px);
   left: 50vw;
-
   display: flex;
   flex-direction: column;
   justify-content: center;
@@ -12,27 +11,28 @@
 
 #Title {
   text-align: center;
-  font-size: clamp(1.3rem, min(5.8vw, 5.8vh), 2.4rem);
+  font-size: calc(clamp(1.3rem, min(5.8vw, 5.8vh), 2.4rem) * 0.75);
   font-weight: bold;
-  color: #19be3d;
-  text-shadow: #114b1e 0 1px;
-  letter-spacing: 1px;
+  color: var(--scrims-blue);
+  /*text-shadow: #114b1e 0 1px;*/
   padding: 0px 14px;
   user-select: none;
-  margin-bottom: -2px;
 }
 
 #IpButton {
+  font-size: calc(clamp(1.4rem, min(7.5vw, 7.5vh), 3.8rem) * 0.5);
   margin-top: 5px;
-  margin-bottom: -6px;
-  padding: 0;
-}
-
-#Ip {
-  font-size: clamp(1.4rem, min(7.5vw, 7.5vh), 3.8rem);
+  padding: 15px 40px;
+  transition-duration: 0.2s;
+  background-color: var(--scrims-red);
+  border: 3px solid var(--scrims-red);
   font-weight: bold;
-  color: var(--text-color);
-  text-shadow: var(--text-shadow) 0 2px;
+  color: white;
   user-select: text;
   margin: 0;
+}
+
+#IpButton:hover {
+    background-color: transparent;
+    color: var(--scrims-red);
 }

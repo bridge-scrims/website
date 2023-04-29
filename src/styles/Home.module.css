@@ -26,8 +26,14 @@
 }
 
 #Title a {
-  color: var(--discord-blue);
+  color: var(--discord-light-blue);
   text-shadow: var(--discord-blue-shadow) 0 2px, var(--text-glow) 0 0 20px;
+  text-decoration-thickness: 8px;
+  transition: color 0.2s;
+}
+
+#Title a:hover {
+    color: var(--discord-blue);
 }
 
 @media (max-width: 1200px) {

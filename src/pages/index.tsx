@@ -65,4 +65,6 @@ export const getServerSideProps: GetServerSideProps<HomeProps> = async (context)
   }
 }
 
+
+
 Home.Layout = MainLayout

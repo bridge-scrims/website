@@ -11,6 +11,7 @@
 
   --discord-blue: rgb(124, 124, 238);
   --discord-blue-shadow: rgb(96, 96, 189);
+  --discord-light-blue: #9595f0;
 
   --scrims-red: #a24f4e;
   --scrims-red-shadow: #8b3939;
@@ -20,6 +21,8 @@
 
   --scrims-blue: #554565;
   --scrims-blue-shadow: #453357;
+
+  --off-white: #eeece8f2;
 }
 
 @media (prefers-color-scheme: dark) {
@@ -69,7 +72,7 @@ i.bi {
   width: 100%;
   height: 100%;
   position: relative;
-
+  left: 0;
   display: flex;
   align-items: center;
 }
@@ -87,10 +90,12 @@ i.bi {
 }
 
 .imageTextWrapper {
-  width: 100%;
-  background-color: rgba(0, 0, 0, 0.25);
+  width: 50%;
+  background-color: var(--off-white);
+  color: var(--scrims-blue);
+  border-radius: 15px;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.46);
-  backdrop-filter: blur(3.5px);
+  backdrop-filter: blur(15px);
   transform: translateY(+25px);
   padding: 25px 10px;
 }
@@ -100,10 +105,6 @@ i.bi {
     background-image: url("/shaders-day.png");
   }
 
-  .imageTextWrapper {
-    background-color: rgba(26, 26, 26, 0.25);
-    box-shadow: 0px 0px 10px 1px rgba(26, 26, 26, 0.53);
-  }
 }
 
 @media screen and (min-width: 920px) {
