@@ -12,27 +12,36 @@
 #Title {
   text-align: center;
   font-size: calc(clamp(1.3rem, min(5.8vw, 5.8vh), 2.4rem) * 0.75);
-  font-weight: bold;
-  color: var(--scrims-blue);
+  font-weight: thin;
+  color: white;
   /*text-shadow: #114b1e 0 1px;*/
   padding: 0px 14px;
   user-select: none;
 }
 
 #IpButton {
-  font-size: calc(clamp(1.4rem, min(7.5vw, 7.5vh), 3.8rem) * 0.5);
+  font-size: calc(clamp(1.4rem, min(7.5vw, 7.5vh), 3.8rem) * 1);
   margin-top: 5px;
-  padding: 15px 40px;
+  padding: 0;
   transition-duration: 0.2s;
-  background-color: var(--scrims-red);
-  border: 3px solid var(--scrims-red);
+  background-color: transparent;
+  border: 3px solid transparent;
   font-weight: bold;
   color: white;
   user-select: text;
   margin: 0;
+  padding: 0px 25px;
 }
 
 #IpButton:hover {
-    background-color: transparent;
-    color: var(--scrims-red);
+    background-color: rgba(255, 255, 255, 0.1);
+}
+
+#Copied {
+    background-color: var(--scrims-blue);
+    padding: 0px 20px;
+    user-select: none;
+    border-radius: 4px;
+    opacity: 0;
+    margin-top: 5px;
 }

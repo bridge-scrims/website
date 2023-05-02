@@ -9,7 +9,7 @@
   justify-content: space-between;
   padding: 0px 10px 0px 10px;
   background-color: var(--header-color);
-  backdrop-filter: blur(10px);
+  backdrop-filter: blur(var(--blur));
 }
 
 #Header a {
