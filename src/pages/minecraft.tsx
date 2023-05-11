@@ -6,7 +6,8 @@ import MainLayout from "@/components/MainLayout"
 
 function copyToClipboard() {
   navigator.clipboard.writeText("bridgescrims.net")
-  //document.getElementsByClassName("copied")[0].style.opacity = 1
+  document.getElementById(styles.Copied)!.style.opacity = "1"
+  setTimeout(() => (document.getElementById(styles.Copied)!.style.opacity = "0"), 1700)
 }
 
 export default function Home() {
@@ -27,12 +28,7 @@ export default function Home() {
           >
             BridgeScrims.net
           </button>
-          <div
-            id={styles.Copied}
-            className="copied"
-          >
-            Copied to clipboard!
-          </div>
+          <div id={styles.Copied}>Copied to clipboard!</div>
         </section>
       </LandingImageSection>
     </>

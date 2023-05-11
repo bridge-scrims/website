@@ -1,7 +1,7 @@
 :root {
   --max-width: 1100px;
   --border-radius: 12px;
-  --blur: 40px;
+  --blur: 20px;
 
   --background-color: #ffffff;
   --header-color: #00000040;
@@ -91,25 +91,18 @@ i.bi {
 }
 
 .imageTextWrapper {
-  width: 50%;
+  width: min(90%, 900px);
   background-color: rgba(0, 0, 0, 0.2);
   color: white;
   border-radius: 15px;
   box-shadow: 0px 0px 10px 2px rgba(0, 0, 0, 0.46);
   backdrop-filter: blur(var(--blur));
   transform: translateY(+25px);
-  padding: 25px 10px;
+  padding: 30px 10px;
 }
 
 @media (prefers-color-scheme: light) {
   .landingImageSection::before {
     background-image: url("/shaders-day.png");
-  }
-
-}
-
-@media screen and (min-width: 920px) {
-  .imageTextWrapper {
-    padding: 34px 10px;
   }
 }

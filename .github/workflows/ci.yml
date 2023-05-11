@@ -15,46 +15,46 @@ jobs:
     runs-on: ubuntu-latest
     environment: production
     steps:
-    - uses: actions/checkout@v3
+      - uses: actions/checkout@v3
 
-    - uses: actions/setup-node@v3
-      with:
-        node-version: 19
+      - uses: actions/setup-node@v3
+        with:
+          node-version: 19
 
-    - uses: actions/cache@v3
-      with:
-        path: |
-          ~/.npm
-          ${{ github.workspace }}/.next/cache
-        key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
-        restore-keys: |
-          ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
+      - uses: actions/cache@v3
+        with:
+          path: |
+            ~/.npm
+            ${{ github.workspace }}/.next/cache
+          key: ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-${{ hashFiles('**.[jt]s', '**.[jt]sx') }}
+          restore-keys: |
+            ${{ runner.os }}-nextjs-${{ hashFiles('**/package-lock.json') }}-
 
-    - name: Install Dependencies
-      run: npm ci
+      - name: Install Dependencies
+        run: npm ci
 
-    - name: Create .env File
-      run: |
-        touch .env
-        echo DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" >> .env
-        echo POSTGRES_CONN_URI="${{ secrets.POSTGRES_CONN_URI }}" >> .env
-        echo SESSION_SECRET="${{ secrets.SESSION_SECRET }}" >> .env
-        echo BASE_URL="${{ vars.BASE_URL }}" >> .env
-        echo NODE_ENV="production" >> .env
+      - name: Create .env File
+        run: |
+          touch .env
+          echo DISCORD_TOKEN="${{ secrets.DISCORD_TOKEN }}" >> .env
+          echo POSTGRES_CONN_URI="${{ secrets.POSTGRES_CONN_URI }}" >> .env
+          echo SESSION_SECRET="${{ secrets.SESSION_SECRET }}" >> .env
+          echo BASE_URL="${{ vars.BASE_URL }}" >> .env
+          echo NODE_ENV="production" >> .env
 
-    - name: Test Build
-      run: npm run build
+      - name: Test Build
+        run: npm run build
 
-    - name: Upload to Server
-      uses: easingthemes/ssh-deploy@v4
-      env:
-        SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
-        ARGS: "-rlgoDzvc -i"
-        SOURCE: ""
-        EXCLUDE: "/.next/, /node_modules/, /.git/, /.github/"
-        REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
-        REMOTE_USER: ${{ secrets.REMOTE_USER }}
-        TARGET: ${{ secrets.REMOTE_TARGET }}
-        SCRIPT_AFTER: |
-          cd ${{ secrets.REMOTE_TARGET }}
-          sudo docker compose up --build -d
+      - name: Upload to Server
+        uses: easingthemes/ssh-deploy@v4
+        env:
+          SSH_PRIVATE_KEY: ${{ secrets.SSH_PRIVATE_KEY }}
+          ARGS: "-rlgoDzvc -i"
+          SOURCE: ""
+          EXCLUDE: "/.next/, /node_modules/, /.git/, /.github/"
+          REMOTE_HOST: ${{ secrets.REMOTE_HOST }}
+          REMOTE_USER: ${{ secrets.REMOTE_USER }}
+          TARGET: ${{ secrets.REMOTE_TARGET }}
+          SCRIPT_AFTER: |
+            cd ${{ secrets.REMOTE_TARGET }}
+            sudo docker compose up --build -d

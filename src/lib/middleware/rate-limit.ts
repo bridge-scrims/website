@@ -22,7 +22,7 @@ export default function RateLimitedApiRoute(handler: NextApiHandler, config: Par
         await rateLimiter
             .consume(getIP(req))
             .then(() => handler(req, res))
-            .catch((r: any) => {
+            .catch((r: unknown) => {
                 if (r instanceof RateLimiterRes) {
                     if (retryCount >= 5) return res.status(429).json({ message: "Too Many Requests" })
                     return sleep(r.msBeforeNext).then(() => {

@@ -8,7 +8,7 @@ import { useEffect } from "react"
 const NAVIGATION = {
   "Minecraft": "/minecraft",
   Store: "https://store.bridgescrims.net",
-  "Overlays": "/overlays",
+  Overlays: "/overlays",
   About: "/about"
 }
 
