@@ -1,15 +1,15 @@
-import { Poppins } from '@next/font/google'
+import { Poppins } from "next/font/google"
 import { useEffect } from "react"
-import Head from 'next/head'
+import Head from "next/head"
 
-import "bootstrap/dist/css/bootstrap.min.css";
-import "bootstrap-icons/font/bootstrap-icons.css";
-import '@/styles/globals.css'
+import "bootstrap/dist/css/bootstrap.min.css"
+import "bootstrap-icons/font/bootstrap-icons.css"
+import "@/styles/globals.css"
 
 const poppins = Poppins({
-  weight: ['200', '400', '500', '600', '800', '900'],
-  style: ['normal', 'italic'],
-  subsets: ['latin'],
+  weight: ["200", "400", "500", "600", "800", "900"],
+  style: ["normal", "italic"],
+  subsets: ["latin"],
   display: "swap"
 })
 
@@ -18,23 +18,16 @@ export default function App({ Component, pageProps }) {
     require("bootstrap/dist/js/bootstrap.bundle.min.js")
   })
 
-  const wrapPage = Component.Layout ? ((p) => <Component.Layout>{p}</Component.Layout>) : ((p) => p)
+  const wrapPage = Component.Layout ? (p) => <Component.Layout>{p}</Component.Layout> : (p) => p
   return (
     <>
       <Head>
         <title>Bridge Scrims</title>
-        <meta charSet="UTF-8" />
-        <meta name="viewport" content="width=device-width, initial-scale=1" />
-        <meta name="color-scheme" content="dark light" />
         <meta name="title" content="Bridge Scrims" />
-        <meta name="description" content="Ready to take your Bridge game to the next level? Join Bridge Scrims, the largest Bridge community on Discord! Checkout our Minecraft server, participate in tournaments, make friends, and sharpen your skills. Join us now!" />
-        <meta name="keywords" content="Hypixel, The Bridge, community, tournaments, montages, texture packs, Minecraft, Discord" />
-        <meta property="og:title" content="Join Bridge Scrims, the largest Bridge community on Discord!" />
-        <meta property="og:description" content="Participate in tournaments, make friends, and sharpen your skills." />
-        <meta property="og:image" content="https://www.bridgescrims.net/shaders-day.png" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
       </Head>
       <div id="__app" className={poppins.className}>
-          {wrapPage(<Component {...pageProps} />)}
+        {wrapPage(<Component {...pageProps} />)}
       </div>
     </>
   )

@@ -1,118 +1,136 @@
 #Header {
-    position: fixed;
-    width: 100%;
-    top: 0;
-    z-index: 2;
+  position: fixed;
+  width: 100%;
+  top: 0;
+  z-index: 2;
 
-    display: flex;
-    align-items: stretch;
-    justify-content: space-between;
-    padding: 0px 20px 0px 10px;
-    background-color: var(--header-color);
-    backdrop-filter: blur(10px);
+  display: flex;
+  align-items: stretch;
+  justify-content: space-between;
+  padding: 0px 10px 0px 10px;
+  background-color: var(--header-color);
+  backdrop-filter: blur(var(--blur));
 }
 
-#Header a:hover, #Header button:hover {
-    background-color: rgba(0, 0, 0, 0.137)
+#Header a {
+  background-color: none;
+  transition: background-color ease 0.2s;
 }
 
-#Header a:focus, #Header button:focus {
-    outline: 0;
-    box-shadow: inset 0 0 0 0.25rem rgb(16 134 255 / 39%);
+#Header a:hover,
+#Header button:hover {
+  outline: 0;
+  box-shadow: none;
+  background-color: rgba(0, 0, 0, 0.25);
+}
+
+#Header a:focus,
+#Header button:focus {
+  outline: 0;
+  box-shadow: none;
+  /*border-bottom: 3px solid var(--scrims-cream);*/
+}
+
+#Header[compact] {
+  padding: 0px 15px 0px 0px;
 }
 
 #HomeButton {
-    display: flex;
-    gap: 8px;
-    text-decoration: none;
-    text-align: start;
-    padding: 8px 12px 8px 9px;
+  display: flex;
+  gap: 8px;
+  text-decoration: none;
+  text-align: start;
+  padding: 8px 12px 8px 9px;
 }
 
 #HomeButton > h2 {
-    font-size: 24px;
-    line-height: 24px;
-    font-weight: bold;
-    text-transform: uppercase;
-    margin: 4.2px 0 0 0;
+  font-size: 24px;
+  line-height: 24px;
+  font-weight: bold;
+  text-transform: uppercase;
+  margin: 4.2px 0 0 0;
 
-    color: var(--scrims-cream);
-    text-shadow: var(--scrims-cream-shadow) 1px 1.3px;
+  color: var(--scrims-cream);
+  text-shadow: var(--scrims-cream-shadow) 1px 1.3px;
 }
 
 #NavButton {
-    margin-right: -15px;
-    color: var(--scrims-cream);
-    font-size: 3rem;
-    padding: 0px 10px;
+  margin-right: -15px;
+  color: var(--scrims-cream);
+  font-size: 3rem;
+  padding: 0px 10px;
 }
 
 #PageNavigation {
-    flex-grow: 1;
-    margin: 0;
+  flex-grow: 1;
+  margin: 0;
 
-    list-style: none;
-    display: flex;
-    justify-content: flex-end;
-    gap: 20px;
+  list-style: none;
+  display: flex;
+  justify-content: flex-end;
 }
 
 #NavClose {
-    position: absolute;
-    top: 10px;
-    right: 5px;
+  position: absolute;
+  top: 10px;
+  right: 5px;
 }
 
 #NavClose > button {
-    color: var(--scrims-cream);
-    font-size: 2rem;
+  color: var(--scrims-cream);
+  font-size: 2rem;
 }
 
 #PageNavigation a {
-    display: flex;
-    align-items: center;
-    height: 100%;
-    
-    text-decoration: none;
-    font-size: 20px;
-    color: var(--scrims-cream);
-    padding: 10px 20px;
+  display: flex;
+  align-items: center;
+  height: 100%;
+
+  text-decoration: none;
+  font-size: 20px;
+  color: var(--scrims-cream);
+  padding: 10px 30px;
 }
 
 #Header[compact] #PageNavigation {
-    display: flex;
-    position: absolute;
-    top: 0;
+  display: flex;
+  position: absolute;
+  top: 0;
 
-    height: 100vh;
-    white-space: nowrap;
-    flex-direction: column;
-    justify-content: flex-start;
-    gap: 10px;
+  height: 100vh;
+  white-space: nowrap;
+  flex-direction: column;
+  justify-content: flex-start;
 
-    background-color: var(--scrims-blue);
-    padding: 70px 0px 25px 0px;
-    overflow-y: auto;
+  background-color: var(--scrims-blue);
+  padding: 70px 0px 25px 0px;
+  overflow-y: auto;
 
-    transition: right ease 0.5s, visibility 0s 0.5s;
-    visibility: hidden;
-    right: -210px;
+  transition: right ease 0.5s, visibility 0s 0.5s;
+  visibility: hidden;
+  right: -210px;
 }
 
 #Header[compact] #PageNavigation a {
-    padding: 15px 30px; 
+  padding: 20px 30px;
+}
+
+#Header[compact] #PageNavigation a {
+  padding: 15px 30px;
 }
 
 #Header[compact] #PageNavigation[open] {
-    transition: right ease 0.5s;
-    visibility: unset;
-    right: 0;
+  transition: right ease 0.5s;
+  visibility: unset;
+  right: 0;
 }
 
-#NavButton, #NavClose {
-    display: none;
+#NavButton,
+#NavClose {
+  display: none;
 }
 
-#Header[compact] #NavButton, #Header[compact] #NavClose {
-    display: block;
+#Header[compact] #NavButton,
+#Header[compact] #NavClose {
+  display: block;
 }

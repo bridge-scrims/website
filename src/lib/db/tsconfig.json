@@ -1,23 +1,21 @@
 {
-    "baseUrl": ".",
-    "compilerOptions": {
-      "target": "ES2022",
-      "module": "commonjs",
-      "moduleResolution": "node16",
-      "strict": true,
-      "skipLibCheck": true,
-      "experimentalDecorators": true,
-      "emitDecoratorMetadata": true,
-      "preserveConstEnums": true,
-      "resolveJsonModule": true,
-      "esModuleInterop": true,
-      "isolatedModules": true,
-      "incremental": true,
-      "sourceMap": true,
-      "allowJs": true,
-      "outDir": "dist",
-      "forceConsistentCasingInFileNames": true
-    },
-    "include": ["**/*.js", "**/*.ts"]
-  }
-  
+  "baseUrl": ".",
+  "compilerOptions": {
+    "target": "ES2022",
+    "module": "commonjs",
+    "moduleResolution": "node16",
+    "strict": true,
+    "experimentalDecorators": true,
+    "emitDecoratorMetadata": true,
+    "preserveConstEnums": true,
+    "resolveJsonModule": true,
+    "esModuleInterop": true,
+    "isolatedModules": true,
+    "incremental": true,
+    "sourceMap": true,
+    "allowJs": true,
+    "outDir": "dist",
+    "forceConsistentCasingInFileNames": true
+  },
+  "include": ["**/*.js", "**/*.ts"]
+}

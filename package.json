@@ -1,6 +1,6 @@
 {
   "name": "bridge-scrims-website",
-  "version": "0.1.0",
+  "version": "1.0.0",
   "description": "Bridge Scrims Website",
   "author": "Bridge Scrims",
   "license": "MIT",
@@ -12,25 +12,25 @@
     "build-db": "npx tsc -b src/lib/db"
   },
   "dependencies": {
-    "@next/font": "^13.0.7",
     "bootstrap": "^5.2.3",
     "bootstrap-icons": "^1.10.3",
     "discord.js": "^14.9.0",
     "glob": "^9.2.1",
     "iron-session": "^6.3.1",
     "jquery": "^3.6.4",
-    "next": "^13.0.7",
+    "next": "^13.3.0",
     "pg": "^8.10.0",
+    "postgres-ipc": "^1.1.0",
     "rate-limiter-flexible": "^2.4.1",
     "react": "^18.2.0",
     "react-dom": "^18.2.0",
     "sharp": "^0.31.3",
-    "typeorm": "^0.3.13"
+    "typeorm": "^0.3.14"
   },
-  "homepage": "https://github.com/bridge-scrims/website-new",
+  "homepage": "https://github.com/bridge-scrims/website-new#readme",
   "repository": {
     "type": "git",
-    "url": "git+https://github.com/bridge-scrims/website-new.git"
+    "url": "https://github.com/bridge-scrims/website-new.git"
   },
   "devDependencies": {
     "@types/jquery": "^3.5.16",
@@ -39,6 +39,8 @@
     "@types/react": "18.0.29",
     "@types/webpack-env": "^1.18.0",
     "eslint": "^8.30.0",
-    "eslint-config-next": "^13.0.7"
+    "eslint-config-next": "^13.0.7",
+    "prettier": "^2.8.8",
+    "typescript": "^5.0.4"
   }
 }

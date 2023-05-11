@@ -1,44 +1,54 @@
 #TitleSection {
-    position: absolute;
-    transform: translateY(-50%) translateX(-50%);
-    top: calc(50vh + 30px);
-    left: 50vw;
-    
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+  top: calc(50vh + 30px);
+  left: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 }
 
 #Title {
-    text-align: center;
-    font-size: clamp(1rem, min(4.5vw, 4.5vh), 2.2rem);
-    font-weight: bold;
-    color: var(--scrims-cream);
-    text-shadow: var(--scrims-cream-shadow) 0 3px;
-    padding: 0px 14px;
-    user-select: none;
-    margin-bottom: -3px;
+  text-align: center;
+  font-size: clamp(1rem, min(5.6vw, 5.6vh), 2.2rem);
+  font-weight: thin;
+  color: white;
+  letter-spacing: 1px;
+  padding: 0px 14px;
+  user-select: none;
 }
 
 #IpButton {
-    margin-top: 5px;
-    margin-bottom: -6px;
-    padding: 0;
+  font-size: clamp(1.4rem, min(7.5vw, 7.5vh), 3.8rem);
+  margin-top: 5px;
+  padding: 0;
+  transition-duration: 0.2s;
+  background-color: transparent;
+  border: 3px solid transparent;
+  font-weight: bold;
+  color: white;
+  user-select: text;
+  margin-bottom: -8px;
+  padding: 0px 20px;
 }
 
-#Ip {
-    font-size: clamp(1rem, min(6.5vw, 6.5vh), 3.8rem);
-    font-weight: bold;
-    color: var(--text-color);
-    text-shadow: var(--text-shadow) 0 3px;
-    user-select: text;
-    margin: 0;
+#IpButton:hover {
+  background-color: rgba(255, 255, 255, 0.1);
 }
 
-@media (prefers-color-scheme: light) {
-    #Title {
-        color: var(--scrims-cream);
-        text-shadow: var(--scrims-cream-shadow) 0 3px;
-    }
+#Copied {
+  position: absolute;
+  bottom: -5px;
+  left: 50%;
+  transform: translateY(50%) translateX(-50%);
+
+  min-width: 210px;
+  background-color: var(--scrims-blue);
+  color: white;
+  padding: 5px 20px;
+  user-select: none;
+  border-radius: 8px;
+  opacity: 0;
+  transition: opacity 1s;
 }

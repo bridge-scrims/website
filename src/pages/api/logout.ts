@@ -1,7 +1,7 @@
-import { NextApiRequest, NextApiResponse } from 'next'
+import { NextApiRequest, NextApiResponse } from "next"
 
-import ApiRouteWithSession from '@/lib/middleware/with-session';
-import RateLimitedApiRoute from '@/lib/middleware/rate-limit';
+import ApiRouteWithSession from "@/lib/middleware/with-session"
+import RateLimitedApiRoute from "@/lib/middleware/rate-limit"
 
 async function handler(req: NextApiRequest, res: NextApiResponse) {
     req.session.destroy()

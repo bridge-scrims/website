@@ -24,12 +24,6 @@
     "lib": ["dom", "dom.iterable", "esnext"],
     "forceConsistentCasingInFileNames": true
   },
-  "include": [
-    "next-env.d.ts",
-    "**/*.js",
-    "**/*.ts",
-    "**/*.jsx",
-    "**/*.tsx"
-  ],
+  "include": ["next-env.d.ts", "**/*.js", "**/*.ts", "**/*.jsx", "**/*.tsx"],
   "exclude": ["node_modules"]
 }

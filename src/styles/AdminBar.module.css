@@ -1,77 +1,77 @@
 #AdminBar {
-    position: absolute;
-    z-index: 1;
-    right: 0;
-    top: 115px;
+  position: absolute;
+  z-index: 1;
+  right: 0;
+  top: 115px;
 
-    border-top-left-radius: 15px;
-    border-bottom-left-radius: 15px;
-    padding: 10px 9px 6px 10px;
-    font-weight: 400;
-    background: #35373a;
-    color: #d1d7dd;
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    
-    transform: translateX(100%);
-    animation: popOutRight .5s forwards .5s;
+  border-top-left-radius: 15px;
+  border-bottom-left-radius: 15px;
+  padding: 10px 9px 6px 10px;
+  font-weight: 400;
+  background: #35373a;
+  color: #d1d7dd;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+
+  transform: translateX(100%);
+  animation: popOutRight 0.5s forwards 0.5s;
 }
 
 @keyframes popOutRight {
-    100% {
-        transform: none;
-    }
+  100% {
+    transform: none;
+  }
 }
 
 #Profile {
-    display: flex;
-    align-items: center;
-    gap: 6px;
+  display: flex;
+  align-items: center;
+  gap: 6px;
 }
 
 #Profile img {
-    border-radius: 15px;
+  border-radius: 15px;
 }
 
 #Welcome {
-    opacity: .9;
-    font-weight: 700;
-    text-transform: uppercase;
-    letter-spacing: .6px;
-    font-size: .9rem;
+  opacity: 0.9;
+  font-weight: 700;
+  text-transform: uppercase;
+  letter-spacing: 0.6px;
+  font-size: 0.9rem;
 }
 
 #AdminNotice {
-    position: absolute;
-    z-index: 1;
-    bottom: 20px;
-    right: 50vw;
-    transform: translateX(-150%);
+  position: absolute;
+  z-index: 1;
+  bottom: 20px;
+  right: 50vw;
+  transform: translateX(-150%);
 
-    display: flex;
-    align-items: center;
-    gap: 10px;
+  display: flex;
+  align-items: center;
+  gap: 10px;
 
-    color: #4d3a10;
-    background: #ffe7af;
-    padding: 10px 10px 8px 10px;
-    border-radius: 20px;
-    font-size: .8rem;
-    width: 766px;
+  color: #4d3a10;
+  background: #ffe7af;
+  padding: 10px 10px 8px 10px;
+  border-radius: 20px;
+  font-size: 0.8rem;
+  width: 766px;
 
-    animation: popOutLeft .5s forwards 1s;
+  animation: popOutLeft 0.5s forwards 1s;
 }
 
 @keyframes popOutLeft {
-    100% {
-        transform: translateX(50%);
-    }
+  100% {
+    transform: translateX(50%);
+  }
 }
 
 @media (max-width: 1000px) {
-    #AdminNotice {
-        width: 95vw;
-        bottom: 10px;
-    }
+  #AdminNotice {
+    width: 95vw;
+    bottom: 10px;
+  }
 }

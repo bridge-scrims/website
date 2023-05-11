@@ -5,11 +5,11 @@ let connectPromise: Promise<DBClient | void> | null = null
 
 export default async function dbConnection() {
     if (!connectPromise) {
-        connectPromise = client.initialize()
+        connectPromise = client
+            .initialize()
             .then(() => client)
             .catch(console.error)
     }
     const db = await connectPromise
-    if (!db) throw new Error('Database initialization failed!')
-    return db
+    return db || null
 }

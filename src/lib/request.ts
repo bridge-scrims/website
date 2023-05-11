@@ -1,18 +1,16 @@
-
 export interface RequestOptions extends RequestInit {
-    signal?: never,
+    signal?: never
     /** number in seconds */
-    timeout?: number, 
+    timeout?: number
     urlParams?: Record<string, any>
 }
 
 export class RequestError extends Error {
-    name = 'RequestError'
+    name = "RequestError"
 }
 
 export class HTTPError extends RequestError {
-
-    name = 'HTTPError'
+    name = "HTTPError"
     public url: string
     public status: number
     public headers: Headers
@@ -33,13 +31,13 @@ async function request(url: string, options: RequestOptions = {}): Promise<Respo
     if (options.urlParams) url += `?${new URLSearchParams(options.urlParams)}`
 
     function requestError(): Response {
-        if (controller.signal.aborted) throw new RequestError('Request timed out')
-        throw new RequestError('Network unavailable')
+        if (controller.signal.aborted) throw new RequestError("Request timed out")
+        throw new RequestError("Network unavailable")
     }
 
-    return fetch(url, { ...options, signal: controller.signal, cache: 'no-cache' })
+    return fetch(url, { ...options, signal: controller.signal, cache: "no-cache" })
         .catch(requestError)
-        .then(async resp => {
+        .then(async (resp) => {
             clearTimeout(timeoutId)
             if (!resp.ok) {
                 const body = await resp.text().catch(() => "")

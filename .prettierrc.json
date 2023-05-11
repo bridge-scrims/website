@@ -1,0 +1,21 @@
+{
+  "trailingComma": "none",
+  "tabWidth": 4,
+  "semi": false,
+  "singleQuote": false,
+  "printWidth": 115,
+  "overrides": [
+    {
+      "files": ["src/pages/**/*", "src/components/**/*", "src/styles/**/*", "*.json", "*.yml"],
+      "options": {
+        "tabWidth": 2
+      }
+    },
+    {
+      "files": ["src/pages/api/**/*"],
+      "options": {
+        "tabWidth": 4
+      }
+    }
+  ]
+}
