@@ -4,12 +4,10 @@ import { IncomingMessage, ServerResponse } from "http"
 import { getHostMember } from "./DiscordBot"
 import { GuildMember } from "discord.js"
 
-if (!process.env.SESSION_SECRET) throw new TypeError("SESSION_SECRET env var must be defined!")
-
 export const SESSION_REFRESH_AFTER = 10 * 24 * 60 * 60
 export const IRON_SESSION_OPTIONS: IronSessionOptions = {
     cookieName: "iron-session",
-    password: process.env.SESSION_SECRET,
+    password: process.env.SESSION_SECRET!,
     ttl: 40 * 24 * 60 * 60,
     cookieOptions: {
         secure: process.env.NODE_ENV === "production"

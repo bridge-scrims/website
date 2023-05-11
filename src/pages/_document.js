@@ -16,7 +16,7 @@ export default function Document() {
           content="Participate in tournaments, make friends, and sharpen your skills."
         />
         <meta property="og:image" content="https://www.bridgescrims.net/shaders-day.png" />
-        <link rel="icon" href="/logo.png" />
+        <link rel="icon" href="/logo.ico" />
       </Head>
       <body>
         <Main />

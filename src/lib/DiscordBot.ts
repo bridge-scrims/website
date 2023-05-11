@@ -21,6 +21,7 @@ export async function getHostMember(memberId: string) {
 
 export default async function discordConnection() {
     if (!connectPromise) {
+        if (!process.env.DISCORD_TOKEN) throw new Error("DISCORD_TOKEN env var must be set!")
         connectPromise = bot
             .login(process.env.DISCORD_TOKEN)
             .then(() => console.log(`Connected to Discord as ${bot.user?.tag}`))
