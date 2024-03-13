@@ -12,11 +12,11 @@ export default function Overlays() {
   return (
     <>
       <Head>
-        <title>Minecraft Server</title>
+        <title>Bridge Overlays</title>
       </Head>
       <LandingImageSection>
         <section id={styles.TitleSection} className="imageTextWrapper">
-          <h1 id={styles.Title}>{"Check out our dedicated Bridge Overlays channel in our Discord "}</h1>
+          <h1 id={styles.Title}>{"Check out the dedicated Bridge Overlays channel in our Discord "}</h1>
           <button
             id={styles.ChannelButton}
             type="button"
