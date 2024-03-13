@@ -5,7 +5,7 @@ import styles from "@/styles/Minecraft.module.css"
 import MainLayout from "@/components/MainLayout"
 
 function copyToClipboard() {
-  navigator.clipboard.writeText("bridgescrims.net")
+  navigator.clipboard.writeText("Scrims.Network")
   document.getElementById(styles.Copied)!.style.opacity = "1"
   setTimeout(() => (document.getElementById(styles.Copied)!.style.opacity = "0"), 1700)
 }
@@ -26,7 +26,7 @@ export default function Home() {
             onClick={copyToClipboard}
             title="Copy to clipboard"
           >
-            BridgeScrims.net
+            Scrims.Network
           </button>
           <div id={styles.Copied}>Copied to clipboard!</div>
         </section>
