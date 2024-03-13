@@ -1,0 +1,38 @@
+#TitleSection {
+  position: absolute;
+  transform: translateY(-50%) translateX(-50%);
+  top: calc(50vh + 30px);
+  left: 50vw;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+#Title {
+  text-align: center;
+  font-size: clamp(1rem, min(5.6vw, 5.6vh), 2.2rem);
+  font-weight: thin;
+  color: white;
+  letter-spacing: 1px;
+  padding: 0px 14px;
+  user-select: none;
+}
+
+#ChannelButton {
+  font-size: clamp(1.4rem, min(7.5vw, 7.5vh), 3.8rem);
+  margin-top: 5px;
+  padding: 0;
+  transition-duration: 0.2s;
+  background-color: #2B2D31;
+  border: 3px solid transparent;
+  font-weight: 600;
+  color: #80848E;
+  user-select: text;
+  margin-bottom: -8px;
+  padding: 0px 20px;
+}
+
+#ChannelButton:hover {
+  background-color: rgba(43,45,49, 0.3);
+}
