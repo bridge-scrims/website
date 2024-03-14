@@ -24,15 +24,15 @@
   margin-top: 5px;
   padding: 0;
   transition-duration: 0.2s;
-  background-color: #2B2D31;
   border: 3px solid transparent;
   font-weight: 600;
-  color: #80848E;
+  color: var(--discord-light-blue);
+  text-decoration: underline;
   user-select: text;
   margin-bottom: -8px;
   padding: 0px 20px;
 }
 
 #ChannelButton:hover {
-  background-color: rgba(43,45,49, 0.3);
+  color: var(--discord-blue);
 }
