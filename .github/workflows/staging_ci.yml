@@ -3,7 +3,7 @@ name: Next.JS Staging CI
 on:
   push:
     branches:
-      - develop
+      - staging
 
 concurrency:
   group: ${{ github.workflow }}-${{ github.ref }}
